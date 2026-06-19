@@ -58,7 +58,7 @@ const schema = {
       label: "Catatan",
       type: "textarea",
       required: false,
-      showInTable: false
+      showInTable: true
     }
   ],
   endpoints: {
