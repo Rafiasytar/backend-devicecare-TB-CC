@@ -35,22 +35,16 @@ app.get("/health", async (req, res) => {
     await pool.query("SELECT 1");
     res.json({
       status: "success",
-      message: "Backend dan database terhubung",
-      data: {
-        backend: "connected",
-        database: "connected",
-        student: schema.student
-      }
+      message: "Backend is running",
+      database: "connected",
+      student: schema.student
     });
   } catch (error) {
     res.status(503).json({
       status: "error",
-      message: "Backend aktif, tetapi database tidak terhubung",
-      data: {
-        backend: "connected",
-        database: "disconnected",
-        student: schema.student
-      }
+      message: "Backend is running, but database is not connected",
+      database: "disconnected",
+      student: schema.student
     });
   }
 });
